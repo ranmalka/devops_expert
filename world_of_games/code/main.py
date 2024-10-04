@@ -1,3 +1,3 @@
-from app import start_play, welcome, get_usd_to_ils_rate
+from app import start_play, welcome
 welcome()
 start_play()
