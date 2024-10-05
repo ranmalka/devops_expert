@@ -15,19 +15,19 @@ def play(difficulty):
     tries = 0
     if difficulty == "1":
         length = 1
-        is_list_equal(length)
+        score = is_list_equal(length)
     if difficulty == "2":
         length = 2
-        is_list_equal(length)
+        score = is_list_equal(length)
     if difficulty == "3":
         length = 3
-        is_list_equal(length)
+        score = is_list_equal(length)
     if difficulty == "4":
         length = 4
-        is_list_equal(length)
+        score = is_list_equal(length)
     if difficulty == "5":
         length = 5
-        is_list_equal(length)
+        score = is_list_equal(length)
 
     print(f"Game Over! Your final score was: {score}")
     if score == 3:
@@ -72,6 +72,5 @@ def is_list_equal(length):
         print(f"Your score is: {score}")
         time.sleep(2)
         clear_screen()
-    return score
 
-play("1")
+    return score

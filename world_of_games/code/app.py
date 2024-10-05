@@ -2,6 +2,13 @@ import time
 from utils import clear_screen
 import guess_game
 import memory_game
+import currency_roulette_game
+from main_score import score_server
+import random, threading, webbrowser
+
+
+
+
 
 def welcome():
     username = input("Please Enter Your Username:")
@@ -33,23 +40,28 @@ def start_play():
 
     elif game_choice == "1":
         if memory_game.play(difficulty) == True:
-
+            score_server(difficulty)
             start_play()
         else:
-            #add_0_scroe
             start_play()
     elif game_choice == "2":
         if guess_game.play(difficulty) == True:
-            #add score
+            score_server(difficulty)
             start_play()
         else:
             start_play()
     elif game_choice == "3":
-        currency_roulette(difficulty)
+        if currency_roulette_game.play(difficulty) == True:
+            score_server(difficulty)
+            start_play()
+        else:
+            start_play()
     else:
         print("Thank you for playing!")
         time.sleep(2)
         exit(1)
+
+
 
 
 
