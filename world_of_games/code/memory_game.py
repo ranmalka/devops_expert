@@ -13,19 +13,19 @@ def play(difficulty):
     clear_screen()
     score = 0
     tries = 0
-    if difficulty == "1":
+    if difficulty == 1:
         length = 1
         score = is_list_equal(length)
-    if difficulty == "2":
+    if difficulty == 2:
         length = 2
         score = is_list_equal(length)
-    if difficulty == "3":
+    if difficulty == 3:
         length = 3
         score = is_list_equal(length)
-    if difficulty == "4":
+    if difficulty == 4:
         length = 4
         score = is_list_equal(length)
-    if difficulty == "5":
+    if difficulty == 5:
         length = 5
         score = is_list_equal(length)
 

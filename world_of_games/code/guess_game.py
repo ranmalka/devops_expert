@@ -11,23 +11,23 @@ def play(difficulty):
     print("*" * 10)
     time.sleep(2)
     clear_screen()
-    if difficulty == "1":
+    if difficulty == 1:
         last_number = 1
         score = compare_results(last_number)
 
-    if difficulty == "2":
+    if difficulty == 2:
         last_number = 2
         score = compare_results(last_number)
 
-    if difficulty == "3":
+    if difficulty == 3:
         last_number = 3
         score = compare_results(last_number)
 
-    if difficulty == "4":
+    if difficulty == 4:
         last_number = 4
         score = compare_results(last_number)
 
-    if difficulty == "5":
+    if difficulty == 5:
         last_number = 5
         score = compare_results(last_number)
 
