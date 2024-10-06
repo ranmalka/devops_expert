@@ -4,6 +4,7 @@ import guess_game
 import memory_game
 import currency_roulette_game
 from main_score import score_server
+from score import add_score
 import random, threading, webbrowser
 
 
@@ -40,19 +41,22 @@ def start_play():
 
     elif game_choice == "1":
         if memory_game.play(difficulty) == True:
-            score_server(difficulty)
+            print("lets see your final score!!")
+            add_score(difficulty)
             start_play()
         else:
             start_play()
     elif game_choice == "2":
         if guess_game.play(difficulty) == True:
-            score_server(difficulty)
+            print("lets see your final score!!")
+            add_score(difficulty)
             start_play()
         else:
             start_play()
     elif game_choice == "3":
         if currency_roulette_game.play(difficulty) == True:
-            score_server(difficulty)
+            print("lets see your final score!!")
+            add_score(difficulty)
             start_play()
         else:
             start_play()
