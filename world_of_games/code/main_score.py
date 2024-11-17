@@ -1,7 +1,7 @@
 from flask import Flask, Response, render_template, request
 from score import add_score
 
-import random, threading, webbrowser
+import random, threading, webbrowser,logging
 
 app = Flask(__name__, template_folder='.')
 
@@ -16,6 +16,8 @@ def score_server(difficulty):
         port = 5000 + random.randint(0, 999)
         url = f"http://127.0.0.1:{port}?difficulty={difficulty}".format(port)  # Example difficulty of 3
         threading.Timer(1, lambda: webbrowser.open(url)).start()
+        log = logging.getLogger('werkzeug')
+        log.disabled = True
         app.run(port=port, debug=False)
 
     else:
@@ -24,9 +26,11 @@ def score_server(difficulty):
             difficulty = request.args.get('difficulty', default=1, type=int)
             return render_template('index.html', SCORE=score_file)
 
-        port = 5000 + random.randint(0, 999)
+        port = 5500 # + random.randint(0, 999)
         url = f"http://127.0.0.1:{port}?difficulty={difficulty}".format(port)  # Example difficulty of 3
         threading.Timer(1, lambda: webbrowser.open(url)).start()
+        log = logging.getLogger('werkzeug')
+        log.disabled = True
         app.run(port=port, debug=False)
 
 # score_file = add_score(difficulty)

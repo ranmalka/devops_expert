@@ -57,6 +57,7 @@ def start_play():
         if memory_game.play(difficulty) == True:
             print("adding your score to score.txt")
             add_score(difficulty)
+            score_server(difficulty)
             start_play()
         else:
             start_play()
@@ -64,6 +65,7 @@ def start_play():
         if guess_game.play(difficulty) == True:
             print("adding your score to score.txt")
             add_score(difficulty)
+            score_server(difficulty)
             start_play()
         else:
             start_play()
@@ -71,6 +73,7 @@ def start_play():
         if currency_roulette_game.play(difficulty) == True:
             print("adding your score to score.txt")
             add_score(difficulty)
+            score_server(difficulty)
             start_play()
         else:
             start_play()
