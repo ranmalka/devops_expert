@@ -9,16 +9,15 @@ pipeline {
         }
         stage('build') {
             steps {
-                sh 'docker build . -t ran-flask-app:1.0.3'
+                sh 'docker build .world_of_games/ -t ran-flask-app:1.0.3'
             }
         }
         stage('run') {
-        agent {
-            docker {
-               image 'ran-flask-app:1.0.3'
-            }
-          }
             steps {
+              sh 'docker run -d -p 5000:5000 --name ran-flask-app ran-flask-app:1.0.3'
+            }
+
+            {
                 sh 'rm ./code/score.txt'
             }
             {
