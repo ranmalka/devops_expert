@@ -9,22 +9,23 @@ pipeline {
         }
         stage('build') {
             steps {
-                sh 'docker build ./world_of_games/ -t ran-flask-app:1.0.8'
+                sh 'docker build ./world_of_games/ -t ranmalka/ran-flask-app:1.0.9 .'
             }
         }
         stage('run') {
             steps {
-              sh 'docker run -d -p 8777:5000 --name ran-flask-app ran-flask-app:1.0.8'
+              sh 'docker run -d -p 8777:5000 --name ran-flask-app ranmalka/ran-flask-app:1.0.9'
             }
         }
         stage('test') {
             steps {
                 sh 'python3 ./world_of_games/code/e2e.py'
+                sh 'echo $?'
             }
         }
         stage('push') {
             steps {
-                sh 'docker push ranmalka/ran-flask-app:1.0.8'
+                sh 'docker push ranmalka/ran-flask-app:1.0.9'
             }
         }
     }
