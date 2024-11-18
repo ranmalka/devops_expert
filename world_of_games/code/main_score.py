@@ -18,7 +18,7 @@ def score_server(difficulty):
         threading.Timer(1, lambda: webbrowser.open(url)).start()
         log = logging.getLogger('werkzeug')
         log.disabled = True
-        app.run(port=port, debug=False)
+        app.run('0.0.0.0',port=port, debug=False)
 
     else:
         @app.route('/')
@@ -31,7 +31,7 @@ def score_server(difficulty):
         threading.Timer(1, lambda: webbrowser.open(url)).start()
         log = logging.getLogger('werkzeug')
         log.disabled = False
-        app.run(port=port, debug=False)
+        app.run('0.0.0.0',port=port, debug=False)
 
 
 score_server(1)
