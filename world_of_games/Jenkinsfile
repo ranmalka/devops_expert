@@ -26,7 +26,7 @@ pipeline {
         }
         stage('test') {
             steps {
-                sh 'python ./world_of_games/code/e2e.py'
+                sh 'python3 ./world_of_games/code/e2e.py'
             }
         }
         stage('push') {
