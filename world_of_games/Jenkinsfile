@@ -9,7 +9,7 @@ pipeline {
         }
         stage('build') {
             steps {
-                sh 'docker build ./world_of_games/ -t ranmalka/ran-flask-app:1.0.9 .'
+                sh 'docker build ./world_of_games/ -t ranmalka/ran-flask-app:1.0.9'
             }
         }
         stage('run') {
