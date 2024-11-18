@@ -6,11 +6,7 @@ The **World of Games** project offers a collection of interactive Python-based g
 
 - [Project Overview](#project-overview)
 - [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
+- [Installation and usage](#installation)
 
 ## Project Overview
 
@@ -23,10 +19,19 @@ This project is developed as part of a DevOps training course, demonstrating the
 - **Currency Roulette**: Guess the value of a random amount in USD converted to ILS.
 - **Score Tracking**: Keep track of your scores and view them on a web-based leaderboard.
 
-## Installation
+## Installation and usage
 
 1. **Clone the Repository**:
 
    ```bash
    git clone https://github.com/ranmalka/devops_expert.git
    cd devops_expert/world_of_games
+
+2. **Install Dependencies:**:
+   ```bash
+   pip install -r requirements.txt
+
+3. **Run the Main Game**:
+   ```bash
+   python main.py
+   
