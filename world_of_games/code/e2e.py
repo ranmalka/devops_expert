@@ -12,7 +12,7 @@ def test_score_service():
     chromedriver_autoinstaller.install()
     driver = webdriver.Chrome(options=opt)
 
-    constructed_path = 'http://localhost:5500'
+    constructed_path = 'http://localhost:8777'
 
     print(f"Constructed path: {constructed_path}")
     try:
