@@ -6,7 +6,7 @@ The **World of Games** project offers a collection of interactive Python-based g
 
 - [Project Overview](#project-overview)
 - [Features](#features)
-- [Installation and usage](#installation)
+- [Installation and usage](#Installation and usage)
 
 ## Project Overview
 
