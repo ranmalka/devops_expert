@@ -33,6 +33,8 @@ def score_server(difficulty):
         log.disabled = True
         app.run(port=port, debug=False)
 
+
+score_server(1)
 # score_file = add_score(difficulty)
 # if add_score(difficulty) == '':
 #     @app.route('/')

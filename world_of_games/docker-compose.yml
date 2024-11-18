@@ -1,0 +1,9 @@
+version: '2'
+services:
+  ran-flask-app:
+    build: .
+    image: ranmalka/ran-flask-app:1.0.1
+    expose:
+      - -5000
+    volumes:
+      - /score.txt

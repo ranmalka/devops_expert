@@ -1,0 +1,39 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('checkout') {
+            steps {
+                checkout scm
+            }
+        }
+        stage('build') {
+            steps {
+                sh 'docker build . -t ran-flask-app:1.0.3'
+            }
+        }
+        stage('run') {
+        agent {
+            docker {
+               image 'ran-flask-app:1.0.3'
+            }
+          }
+            steps {
+                sh 'rm ./code/score.txt'
+            }
+            {
+            sh 'echo "18" > ./code/score.txt'
+            }
+        }
+        stage('test') {
+            steps {
+                sh 'python ./code/e2e.py'
+            }
+        }
+        stage('push') {
+            steps {
+                sh 'docker push ranmalka/ran-flask-app:1.0.3'
+            }
+        }
+    }
+}
