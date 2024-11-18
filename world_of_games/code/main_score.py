@@ -14,7 +14,7 @@ def score_server(difficulty):
             return render_template('error.html', ERROR = "Score not found")
 
         port = 5000 + random.randint(0, 999)
-        url = f"http://127.0.0.1:{port}?difficulty={difficulty}".format(port)  # Example difficulty of 3
+        url = f"http://0.0.0.0:{port}?difficulty={difficulty}".format(port)  # Example difficulty of 3
         threading.Timer(1, lambda: webbrowser.open(url)).start()
         log = logging.getLogger('werkzeug')
         log.disabled = True
@@ -27,7 +27,7 @@ def score_server(difficulty):
             return render_template('index.html', SCORE=score_file)
 
         port = 5000 # + random.randint(0, 999)
-        url = f"http://127.0.0.1:{port}?difficulty={difficulty}".format(port)  # Example difficulty of 3
+        url = f"http://0.0.0.0:{port}?difficulty={difficulty}".format(port)  # Example difficulty of 3
         threading.Timer(1, lambda: webbrowser.open(url)).start()
         log = logging.getLogger('werkzeug')
         log.disabled = False

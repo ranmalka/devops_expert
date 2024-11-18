@@ -9,12 +9,12 @@ pipeline {
         }
         stage('build') {
             steps {
-                sh 'docker build ./world_of_games/ -t ran-flask-app:1.0.3'
+                sh 'docker build ./world_of_games/ -t ran-flask-app:1.0.4'
             }
         }
         stage('run') {
             steps {
-              sh 'docker run -d -p 5000:5000 --name ran-flask-app ran-flask-app:1.0.3'
+              sh 'docker run -d -p 5000:5000 --name ran-flask-app ran-flask-app:1.0.4'
             }
 
             {
@@ -31,7 +31,7 @@ pipeline {
         }
         stage('push') {
             steps {
-                sh 'docker push ranmalka/ran-flask-app:1.0.3'
+                sh 'docker push ranmalka/ran-flask-app:1.0.4'
             }
         }
     }
