@@ -18,15 +18,15 @@ pipeline {
             }
 
             {
-                sh 'rm ./code/score.txt'
+                sh 'rm ./world_of_games/code/score.txt'
             }
             {
-            sh 'echo "18" > ./code/score.txt'
+            sh 'echo "18" > ./world_of_games/code/score.txt'
             }
         }
         stage('test') {
             steps {
-                sh 'python ./code/e2e.py'
+                sh 'python ./world_of_games/code/e2e.py'
             }
         }
         stage('push') {
